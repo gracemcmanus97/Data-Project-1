@@ -29,6 +29,7 @@ try:
                 return cursor.fetchall()
 #### create a variable called product_revenue and set it equal to the get_revenue function invoked 
     product_revenue = get_revenue()
+    print (product_revenue)
 #### print the product_revenue variable to look at the structure of the variable to help you write the next function
     product_categories = []
     total_revenue = []
@@ -38,6 +39,8 @@ try:
     while count < (len(product_revenue)):
         product_categories.append(product_revenue[index][0])
         total_revenue.append(int(product_revenue[index][1]))
+        count += 1
+        index += 1
 #### follow the project directions to create a function which makes a bar chart in matplotlib using the total revenue from each product category
     def create_bar_chart():
         figure = plt.figure()
@@ -56,7 +59,7 @@ try:
     create_bar_chart()
     plt.show()
 
-    
+
 except (Exception, Error) as error:
     print("Error while connecting to PostgreSQL DB", error)
 
